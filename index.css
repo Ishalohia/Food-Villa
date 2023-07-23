@@ -1,0 +1,28 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+background-image: linear-gradient(to right top, #e3e0f8,  #fce1d8);
+        height: 100%;
+        background-repeat: no-repeat;
+       
+}
+
+.custom-toast-success {
+        background-color: green;
+        color: white;
+}
+
+/* Toast styles for info (increaseCart and decreaseCart) */
+.custom-toast-info {
+        background-color: blue;
+        color: white;
+}
+
+/* Toast styles for error (removeFromCart and clearCart) */
+.custom-toast-error {
+        background-color: red;
+        color: white;
+}
