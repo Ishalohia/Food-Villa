@@ -1,4 +1,3 @@
-import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import contactUs from "../assets/ContactUs.svg"
 import emailjs from 'emailjs-com';
