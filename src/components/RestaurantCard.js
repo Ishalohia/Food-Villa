@@ -5,9 +5,9 @@ const RestaurantCard = ({
   cloudinaryImageId,
   name,
   cuisines,
-  area,
-  lastMileTravelString,
-  costForTwoString,
+  areaName,
+  isOpen,
+  costForTwo,
   avgRating,
 }) => {
 return ( 
@@ -19,10 +19,10 @@ return (
   <div className="sm:w-60 leading-normal text-gray-800 text-md mb-3 tracking-tighter -mt-8 ">
     <h2 className="text-lg font-semibold">{name}</h2>
     <h3 >{cuisines.join(", ")}</h3>
-    <h4 className="text-gray-600">{area}</h4>  
+    <h4 className="text-gray-700">{areaName}</h4>  
   </div>
-  <span className=" flex text-sm justify-between text-gray-600 mr-1 hover:text-red-800  ">
-      <h4 className="p-2 rounded-lg "
+  <span className=" flex text-md justify-between text-gray-700 mr-1 hover:text-red-800  ">
+      <h4 className="p-2 rounded-lg -mt-1"
        style={
             avgRating < 4
               ? { backgroundColor: "red", color:"white"}
@@ -30,8 +30,8 @@ return (
               ? { backgroundColor: "white", color: "black" }
               : { backgroundColor: "green", color: "white" }
           }>{avgRating} ⭐️ </h4>
-        <h4 className="leading-8">{lastMileTravelString}</h4>
-        <h4 className="leading-8">{costForTwoString}</h4>
+        <h4 className="leading-8">{isOpen? "Open" : "Close"}</h4>
+        <h4 className="leading-8">{costForTwo}</h4>
       </span>
   </div>
 );
