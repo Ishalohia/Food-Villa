@@ -21,8 +21,12 @@ const Menu= () => {
       const data = await fetch(swiggy_api_URL);
       const json =  await data.json();
       console.log(json);
-      setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards)
-      setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards)
+      setAllRestaurants(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+      setFilteredRestaurants(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
       }
       catch(error){
         console.log(error)
@@ -96,8 +100,8 @@ const Menu= () => {
        <div className="flex flex-wrap justify-center gap-7">
         {filteredRestaurants?.map((restaurant) => {
             return (
-              <Link to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}>
-                <RestaurantCard {...restaurant.data} />
+              <Link to={"/restaurant/" + restaurant?.info.id} key={restaurant?.info.id}>
+                <RestaurantCard {...restaurant?.info} />
               </Link>
             );
           })}
